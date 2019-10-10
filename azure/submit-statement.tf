@@ -1,5 +1,5 @@
-resource "azurerm_resource_group" "submit-statement" {
-  name     = "azure-functions-submit-statement-rg"
+resource "azurerm_resource_group" "kiroku" {
+  name     = "kiroku"
   location = "westus2"
 }
 
