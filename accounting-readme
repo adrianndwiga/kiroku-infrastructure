@@ -23,7 +23,7 @@ salesAndExpencesReportQueue
 salesAndExpencesReportStore
 
 @Lambda
-salesAndReport
+salesAndExpencesReport
 
 @Cloud
 azure
@@ -38,7 +38,7 @@ submitStatementStore
 getTransactionsFromSubmittedStatement
 transactionsQueue
 transactionsStore
-salesAndReport
+salesAndExpencesReport
 salesAndExpencesReportQueue
 salesAndExpencesReportStore
 
