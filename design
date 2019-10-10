@@ -60,12 +60,12 @@ transactionsUpdate
 transactionsStore
     allowRead:transactionsUpdate
     allowWrite:transactionsUpdate
-salesAndReport
+salesAndExpencesReportUpdate
     canRead:salesAndExpencesReportStore
     canWrite:salesAndExpencesReportStore
 salesAndExpencesReportStore
-    allowRead:salesAndReport
-    allowWrite:salesAndReport
+    allowRead:salesAndExpencesReportUpdate
+    allowWrite:salesAndExpencesReportUpdate
 
 if(cloud === 'azure') {
     /// create azure function {name}
