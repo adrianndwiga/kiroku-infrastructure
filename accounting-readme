@@ -1,0 +1,81 @@
+@Lambda
+submitStatement 
+
+@Queue
+submitStatementQueue
+
+@Store
+submitStatementStore
+
+@Lambda
+transactions
+
+@Queue
+transactionsQueue
+
+@Store
+transactionsStore
+
+@Queue
+salesAndExpencesReportQueue
+
+@Store
+salesAndExpencesReportStore
+
+@Lambda
+salesAndReport
+
+@Cloud
+azure
+
+@Cloud
+aws
+
+@AccessRoles
+submitStatement
+submitStatementQueue
+submitStatementStore
+transactions
+transactionsQueue
+transactionsStore
+salesAndReport
+salesAndExpencesReportQueue
+salesAndExpencesReportStore
+
+@AccessRights
+submitStatement 
+    canWrite:submitStatementQueue
+    canWrite:submitStatementStore
+submitStatementQueue
+    allowWrite:submitStatement
+    allowReadAndWrite:transactions
+submitStatementStore
+    allowWrite:submitStatement
+    allowRead:transactions
+getTransactionsFromSubmittedStatement
+    canReadAndWrite:submitStatementQueue
+    canRead:submitStatementStore
+    canWrite:salesAndExpencesReportQueue
+    canReadAndWrite:transactionsStore
+transactionsStore
+    allowRead:getTransactionsFromSubmittedStatement
+    allowWrite:getTransactionsFromSubmittedStatement
+salesAndReport
+    canRead:salesAndExpencesReportStore
+    canWrite:salesAndExpencesReportStore
+salesAndExpencesReportStore
+    allowRead:salesAndReport
+    allowWrite:salesAndReport
+
+if(cloud === 'azure') {
+    /// create azure function {name}
+} else if (cloud === 'aws') {
+    /// create aws lambda {name}
+}
+
+
+
+
+
+
+
