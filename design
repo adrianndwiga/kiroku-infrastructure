@@ -8,7 +8,7 @@ submitStatementQueue
 submitStatementStore
 
 @Lambda
-getTransactionsFromSubmittedStatement
+transactionsUpdate
 
 @Queue
 transactionsQueue
@@ -35,7 +35,7 @@ aws
 submitStatement
 submitStatementQueue
 submitStatementStore
-getTransactionsFromSubmittedStatement
+transactionsUpdate
 transactionsQueue
 transactionsStore
 salesAndExpencesReport
@@ -48,18 +48,18 @@ submitStatement
     canWrite:submitStatementStore
 submitStatementQueue
     allowWrite:submitStatement
-    allowReadAndWrite:getTransactionsFromSubmittedStatement
+    allowReadAndWrite:transactionsUpdate
 submitStatementStore
     allowWrite:submitStatement
-    allowRead:getTransactionsFromSubmittedStatement
-getTransactionsFromSubmittedStatement
+    allowRead:transactionsUpdate
+transactionsUpdate
     canReadAndWrite:submitStatementQueue
     canRead:submitStatementStore
     canWrite:salesAndExpencesReportQueue
     canReadAndWrite:transactionsStore
 transactionsStore
-    allowRead:getTransactionsFromSubmittedStatement
-    allowWrite:getTransactionsFromSubmittedStatement
+    allowRead:transactionsUpdate
+    allowWrite:transactionsUpdate
 salesAndReport
     canRead:salesAndExpencesReportStore
     canWrite:salesAndExpencesReportStore
