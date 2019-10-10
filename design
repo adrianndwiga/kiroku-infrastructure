@@ -16,14 +16,8 @@ transactionsQueue
 @Store
 transactionsStore
 
-@Queue
-salesAndExpencesReportQueue
-
-@Store
-salesAndExpencesReportStore
-
 @Lambda
-salesAndExpencesReportUpdate
+salesAndExpencesReport
 
 @Cloud
 azure
@@ -38,9 +32,7 @@ submitStatementStore
 transactionsUpdate
 transactionsQueue
 transactionsStore
-salesAndExpencesReportUpdate
-salesAndExpencesReportQueue
-salesAndExpencesReportStore
+salesAndExpencesReport
 
 @AccessRights
 submitStatement 
@@ -55,17 +47,12 @@ submitStatementStore
 transactionsUpdate
     canReadAndWrite:submitStatementQueue
     canRead:submitStatementStore
-    canWrite:salesAndExpencesReportQueue
     canReadAndWrite:transactionsStore
 transactionsStore
     allowRead:transactionsUpdate
     allowWrite:transactionsUpdate
-salesAndExpencesReportUpdate
-    canRead:salesAndExpencesReportStore
-    canWrite:salesAndExpencesReportStore
-salesAndExpencesReportStore
-    allowRead:salesAndExpencesReportUpdate
-    allowWrite:salesAndExpencesReportUpdate
+salesAndExpencesReport
+    canRead:transactionsStore
 
 
 
