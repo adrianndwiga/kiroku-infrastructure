@@ -10,9 +10,6 @@ submitStatementStore
 @Lambda
 transactionsUpdate
 
-@Queue
-transactionsQueue
-
 @Store
 transactionsStore
 
@@ -30,7 +27,6 @@ submitStatement
 submitStatementQueue
 submitStatementStore
 transactionsUpdate
-transactionsQueue
 transactionsStore
 salesAndExpencesReport
 
