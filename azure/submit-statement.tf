@@ -25,3 +25,9 @@ resource "azurerm_function_app" "submit-statement" {
   app_service_plan_id       = "${azurerm_app_service_plan.submit-statement.id}"
   storage_connection_string = "${azurerm_storage_account.submit-statement.primary_connection_string}"
 }
+
+resource "azure_storage_queue" "submit-statement-storage-queue" {
+  name                 = "submit-statement-storage-queue"
+  resource_group_name  = "${azurerm_resource_group.submit-statement.name}"
+  storage_account_name = "${azurerm_storage_account.submit-statement.name}"
+}
