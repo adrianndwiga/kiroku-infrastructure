@@ -1,0 +1,2 @@
+Name: Some Name
+Amount: 1000
