@@ -5,3 +5,15 @@ resource "azurerm_storage_account" "transactions-update" {
   account_tier             = "Standard"
   account_replication_type = "LRS"
 }
+
+resource "azurerm_app_service_plan" "transactions-update" {
+  name                = "azure-functions-transactions-update-service-plan"
+  location            = "${azurerm_resource_group.kiroku.location}"
+  resource_group_name = "${azurerm_resource_group.kiroku.name}"
+  kind                = "FunctionApp"
+
+  sku {
+    tier = "Dynamic"
+    size = "Y1"
+  }
+}
