@@ -24,7 +24,7 @@ resource "azurerm_app_service_plan" "submit-statement" {
 }
 
 resource "azurerm_function_app" "submit-statement" {
-  name                      = "submit-statement-functions"
+  name                      = "submit-statement-function"
   location                  = "${azurerm_resource_group.submit-statement.location}"
   resource_group_name       = "${azurerm_resource_group.submit-statement.name}"
   app_service_plan_id       = "${azurerm_app_service_plan.submit-statement.id}"
