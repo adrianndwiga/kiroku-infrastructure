@@ -32,3 +32,10 @@ resource "azure_storage_queue" "transactions-update-storage-queue" {
   resource_group_name  = "${azurerm_resource_group.kiroku.name}"
   storage_account_name = "${azurerm_storage_account.transactions-update.name}"
 }
+
+resource "azurerm_storage_container" "transactions-update" {
+  name                  = "transactions-update"
+  resource_group_name   = "${azurerm_resource_group.kiroku.name}"
+  storage_account_name  = "${azurerm_storage_account.transactions-update.name}"
+  container_access_type = "private"
+}
