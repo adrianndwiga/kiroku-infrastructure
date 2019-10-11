@@ -1,8 +1,3 @@
-resource "azurerm_resource_group" "kiroku" {
-  name     = "kiroku"
-  location = "westus2"
-}
-
 resource "azurerm_storage_account" "submit-statement" {
   name                     = "submit-statement-function"
   resource_group_name      = "${azurerm_resource_group.submit-statement.name}"
