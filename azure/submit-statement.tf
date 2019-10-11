@@ -31,3 +31,11 @@ resource "azure_storage_queue" "submit-statement-storage-queue" {
   resource_group_name  = "${azurerm_resource_group.submit-statement.name}"
   storage_account_name = "${azurerm_storage_account.submit-statement.name}"
 }
+
+resource "azurerm_storage_container" "submit-statement" {
+  name                  = "submit-statement"
+  resource_group_name   = "${azurerm_resource_group.kiroku.name}"
+  storage_account_name  = "${azurerm_storage_account.submit-statement.name}"
+  container_access_type = "private"
+}
+
