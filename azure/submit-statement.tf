@@ -15,7 +15,7 @@ resource "azurerm_app_service_plan" "submit-statement" {
   name                = "azure-functions-submit-statement-service-plan"
   location            = "${azurerm_resource_group.submit-statement.location}"
   resource_group_name = "${azurerm_resource_group.submit-statement.name}"
-  kind                = "SubmitStatement"
+  kind                = "FunctionApp"
 
   sku {
     tier = "Dynamic"
