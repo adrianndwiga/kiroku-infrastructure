@@ -51,12 +51,6 @@ transactionsUpdate
 transactionsStore
     allowRead:transactionsUpdate
     allowWrite:transactionsUpdate
+    allowRead:salesAndExpencesReport
 salesAndExpencesReport
     canRead:transactionsStore
-
-
-
-
-
-
-
