@@ -24,6 +24,10 @@ resource "azurerm_function_app" "submit-statement" {
   resource_group_name       = "${azurerm_resource_group.kiroku.name}"
   app_service_plan_id       = "${azurerm_app_service_plan.submit-statement.id}"
   storage_connection_string = "${azurerm_storage_account.submit-statement.primary_connection_string}"
+
+  app_settings {
+    "FUNCTIONS_WORKER_RUNTIME" = "dotnet"
+  }
 }
 
 resource "azure_storage_queue" "submit-statement-storage-queue" {
