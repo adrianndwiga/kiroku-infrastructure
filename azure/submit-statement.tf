@@ -46,3 +46,12 @@ resource "azurerm_storage_container" "submit-statement" {
   container_access_type = "private"
 }
 
+
+resource "azurerm_storage_blob" "submit-statement" {
+  name                   = "dummy.zip"
+  resource_group_name    = "${azurerm_resource_group.kiroku.name}"
+  storage_account_name   = "${azurerm_storage_account.submit-statement.name}"
+  storage_container_name = "${azurerm_storage_container.submit-statement.name}"
+  type                   = "blob"
+  source                 = "dummy.zip"
+}
