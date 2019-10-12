@@ -16,6 +16,12 @@ transactionsStore
 @Lambda
 salesAndExpencesReport
 
+@Lambda
+submitDocument
+
+@Store
+documentsStore
+
 @Cloud
 azure
 
