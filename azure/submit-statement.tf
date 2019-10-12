@@ -26,8 +26,8 @@ resource "azurerm_function_app" "submit-statement" {
   storage_connection_string = "${azurerm_storage_account.submit-statement.primary_connection_string}"
 
   app_settings {
-    "FUNCTIONS_WORKER_RUNTIME" = "dotnet"
-    "FUNCTION_APP_EDIT_MODE" = "readonly"
+    "FUNCTIONS_WORKER_RUNTIME"  = "dotnet"
+    "FUNCTION_APP_EDIT_MODE"    = "readonly"
   }
 }
 
