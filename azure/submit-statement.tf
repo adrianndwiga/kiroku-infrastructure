@@ -29,7 +29,7 @@ resource "azurerm_function_app" "submit-statement" {
     "FUNCTIONS_WORKER_RUNTIME"  = "dotnet"
     "FUNCTION_APP_EDIT_MODE"    = "readonly"
     "HASH"                      = "${base64sha256(file("./dummy.zip"))}"
-    "WEBSITE_RUN_FROM_PACKAGE"  = ""
+    "WEBSITE_RUN_FROM_PACKAGE"  = "https://${azurerm_storage_account.submit-statement.name}.blob.core.windows.net/${azurerm_storage_container.submit-statement.name}"
   }
 }
 
