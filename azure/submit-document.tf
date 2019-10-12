@@ -32,3 +32,10 @@ resource "azurerm_function_app" "submit-document" {
     "WEBSITE_RUN_FROM_PACKAGE"  = "https://${azurerm_storage_account.submit-document.name}.blob.core.windows.net/${azurerm_storage_container.submit-document.name}"
   }
 }
+
+resource "azurerm_storage_container" "submit-document" {
+  name                  = "submit-document"
+  resource_group_name   = "${azurerm_resource_group.kiroku.name}"
+  storage_account_name  = "${azurerm_storage_account.submit-document.name}"
+  container_access_type = "private"
+}
