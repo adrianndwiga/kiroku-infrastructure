@@ -28,6 +28,7 @@ resource "azurerm_function_app" "submit-statement" {
   app_settings {
     "FUNCTIONS_WORKER_RUNTIME"  = "dotnet"
     "FUNCTION_APP_EDIT_MODE"    = "readonly"
+    "HASH"                      = "${base64sha256(file("./dummy.zip"))}"
   }
 }
 
