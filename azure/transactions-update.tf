@@ -39,3 +39,12 @@ resource "azurerm_storage_container" "transactions-update" {
   storage_account_name  = "${azurerm_storage_account.transactions-update.name}"
   container_access_type = "private"
 }
+
+resource "azurerm_storage_blob" "transactions-update" {
+  name                   = "dummy.zip"
+  resource_group_name    = "${azurerm_resource_group.kiroku.name}"
+  storage_account_name   = "${azurerm_storage_account.transactions-update.name}"
+  storage_container_name = "${azurerm_storage_container.transactions-update.name}"
+  type                   = "blob"
+  source                 = "dummy.zip"
+}
