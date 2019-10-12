@@ -32,3 +32,12 @@ resource "azurerm_function_app" "sales-and-expences-report" {
     "WEBSITE_RUN_FROM_PACKAGE"  = "https://${azurerm_storage_account.sales-and-expences-report.name}.blob.core.windows.net/${azurerm_storage_container.sales-azurerm_storage_account.sales-and-expences-report.name}"
   }
 }
+
+resource "azurerm_storage_blob" "sales-and-expences-report" {
+  name                   = "dummy.zip"
+  resource_group_name    = "${azurerm_resource_group.kiroku.name}"
+  storage_account_name   = "${azurerm_storage_account.sales-and-expences-report.name}"
+  storage_container_name = "${azurerm_storage_container.sales-and-expences-report.name}"
+  type                   = "blob"
+  source                 = "dummy.zip"
+}
