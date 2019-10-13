@@ -4,6 +4,9 @@
 ## submit statement
 submits / upload statement
 
+## transactions update
+updates transactions from submitted statements
+
 ## submit document
 submits / uploads documents
 
