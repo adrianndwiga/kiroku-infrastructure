@@ -1,5 +1,5 @@
 resource "azurerm_storage_account" "submit-statement" {
-  name                     = "submit-statement-function"
+  name                     = "submit-statement-storage-account"
   resource_group_name      = "${azurerm_resource_group.kiroku.name}"
   location                 = "${azurerm_resource_group.kiroku.location}"
   account_tier             = "Standard"
