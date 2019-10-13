@@ -1,6 +1,8 @@
 # kiroku
 記録
 
+## submit statement
+submits / upload statement
 
 ## submit document
 submits / uploads documents
