@@ -1,5 +1,5 @@
 resource "azurerm_storage_account" "submit-document" {
-  name                     = "submit-document-function"
+  name                     = "submit-document-storage-account"
   resource_group_name      = "${azurerm_resource_group.kiroku.name}"
   location                 = "${azurerm_resource_group.kiroku.location}"
   account_tier             = "Standard"
