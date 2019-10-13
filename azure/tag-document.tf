@@ -45,3 +45,12 @@ resource "azurerm_storage_container" "tag-document" {
   storage_account_name  = "${azurerm_storage_account.tag-document.name}"
   container_access_type = "private"
 }
+
+resource "azurerm_storage_blob" "tag-document" {
+  name                   = "dummy.zip"
+  resource_group_name    = "${azurerm_resource_group.kiroku.name}"
+  storage_account_name   = "${azurerm_storage_account.tag-document.name}"
+  storage_container_name = "${azurerm_storage_container.tag-document.name}"
+  type                   = "blob"
+  source                 = "dummy.zip"
+}
