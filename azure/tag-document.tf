@@ -32,3 +32,9 @@ resource "azurerm_function_app" "tag-document" {
     "WEBSITE_RUN_FROM_PACKAGE"  = "https://${azurerm_storage_account.tag-document.name}.blob.core.windows.net/${azurerm_storage_container.submit-statement.name}"
   }
 }
+
+resource "azure_storage_queue" "tag-document-storage-queue" {
+  name                 = "tag-document-storage-queue"
+  resource_group_name  = "${azurerm_resource_group.kiroku.name}"
+  storage_account_name = "${azurerm_storage_account.tag-document.name}"
+}
