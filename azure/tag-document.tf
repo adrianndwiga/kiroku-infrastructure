@@ -38,3 +38,10 @@ resource "azure_storage_queue" "tag-document-storage-queue" {
   resource_group_name  = "${azurerm_resource_group.kiroku.name}"
   storage_account_name = "${azurerm_storage_account.tag-document.name}"
 }
+
+resource "azurerm_storage_container" "tag-document" {
+  name                  = "tag-document"
+  resource_group_name   = "${azurerm_resource_group.kiroku.name}"
+  storage_account_name  = "${azurerm_storage_account.tag-document.name}"
+  container_access_type = "private"
+}
